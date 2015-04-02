@@ -1,0 +1,18 @@
+{
+  "queryType": "search",
+  "dataSource": "pageviews",
+  "intervals": [
+    "2015-03-01/2015-04-01"
+  ],
+  "granularity": "hour",
+  "searchDimensions": [
+    "url"
+  ],
+  "query": {
+    "type": "insensitive_contains",
+    "value": ""
+  },
+  "sort": {
+    "type": "lexicographic"
+  }
+}

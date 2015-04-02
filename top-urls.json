@@ -1,0 +1,18 @@
+{
+  "queryType": "topN",
+  "dataSource": "pageviews",
+  "intervals": [
+    "2015-03-01/2015-04-01"
+  ],
+  "granularity": "hour",
+  "dimension": "url",
+  "metric": "pageviews",
+  "threshold": 1,
+  "aggregations": [
+    {
+      "type": "longSum",
+      "fieldName": "count",
+      "name": "pageviews"
+    }
+  ]
+}

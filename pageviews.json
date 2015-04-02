@@ -1,0 +1,15 @@
+{
+  "queryType": "timeseries",
+  "dataSource": "pageviews",
+  "intervals": [
+    "2015-03-01/2015-04-01"
+  ],
+  "granularity": "hour",
+  "aggregations": [
+    {
+      "type": "longSum",
+      "fieldName": "count",
+      "name": "pageviews"
+    }
+  ]
+}
