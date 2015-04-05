@@ -1,0 +1,17 @@
+{
+  "queryType": "timeseries",
+  "dataSource": "pageviews",
+  "intervals": [
+    "2015-03-01/2015-04-01"
+  ],
+  "granularity": "hour",
+  "aggregations": [
+    {
+      "type": "cardinality",
+      "fieldNames": [
+        "userId"
+      ],
+      "name": "uniqueVisitors"
+    }
+  ]
+}

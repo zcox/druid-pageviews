@@ -1,0 +1,18 @@
+{
+  "queryType": "groupBy",
+  "dataSource": "pageviews",
+  "intervals": [
+    "2015-03-01/2015-04-01"
+  ],
+  "granularity": "hour",
+  "dimensions": [
+    "url"
+  ],
+  "aggregations": [
+    {
+      "type": "hyperUnique",
+      "fieldName": "userIdHll",
+      "name": "uniqueVisitors"
+    }
+  ]
+}

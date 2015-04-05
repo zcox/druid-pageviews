@@ -1,0 +1,61 @@
+{
+  "type": "index",
+  "spec": {
+    "dataSchema": {
+      "dataSource": "pageviews",
+      "parser": {
+        "type": "string",
+        "parseSpec": {
+          "format": "json",
+          "timestampSpec": {
+            "column": "timestamp",
+            "format": "auto"
+          },
+          "dimensionsSpec": {
+            "dimensions": [
+              "url"
+            ],
+            "dimensionExclusions": [
+              "eventId",
+              "userId"
+            ],
+            "spatialDimensions": []
+          }
+        }
+      },
+      "metricsSpec": [
+        {
+          "type": "count",
+          "name": "count"
+        },
+        {
+          "type": "hyperUnique",
+          "fieldName": "userId",
+          "name": "userIdHll"
+        }
+      ],
+      "granularitySpec": {
+        "type": "uniform",
+        "segmentGranularity": "DAY",
+        "queryGranularity": "HOUR",
+        "intervals": [
+          "2015-03-01/2015-04-01"
+        ]
+      }
+    },
+    "ioConfig": {
+      "type": "index",
+      "firehose": {
+        "type": "local",
+        "baseDir": "/Users/zcox/code/druid-pageviews",
+        "filter": "events.json"
+      }
+    },
+    "tuningConfig": {
+      "type": "index",
+      "targetPartitionSize": -1,
+      "rowFlushBoundary": 0,
+      "numShards": 1
+    }
+  }
+}
