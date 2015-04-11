@@ -1,7 +1,7 @@
 {
   "type": "index_hadoop",
   "hadoopDependencyCoordinates": [
-    "org.apache.hadoop:hadoop-client:2.6.0"
+    "org.apache.hadoop:hadoop-client:2.4.1"
   ],
   "spec": {
     "dataSchema": {
