@@ -1,3 +1,4 @@
+docker ps
 docker exec -it [hdfsContainerId] bash
 /usr/local/hadoop/bin/hdfs dfs -mkdir -p /data
 /usr/local/hadoop/bin/hdfs dfs -put /Users/zcox/code/druid-pageviews/events.json /data
